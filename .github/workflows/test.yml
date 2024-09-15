@@ -31,4 +31,23 @@ jobs:
           export PATH="${PWD}/_neovim/bin:${PATH}"
           export VIM="${PWD}/_neovim/share/nvim/runtime"
           nvim --version
-          make test
+          nvim --headless --noplugin -u tests/minimal_init.lua -c "PlenaryBustedDirectory tests/pretty-ts-errors { minimal_init = './tests/minimal_init.lua'}"
+
+      - uses: actions/checkout@v4
+      - name: Install LuaJIT
+        uses: leafo/gh-actions-luajit@v10
+        with:
+          luaVersion: "luajit-2.1.0-beta3"
+      - name: Install luarocks
+        uses: leafo/gh-actions-luarocks@v4
+
+      - name: Install vusted
+        shell: bash
+        run: luarocks install vusted
+
+      - name: Run tests
+        shell: bash
+        run: |
+          export PATH="${PWD}/_neovim/bin:${PATH}"
+          export VIM="${PWD}/_neovim/share/nvim/runtime"
+          vusted --output=gtest tests/pretty-ts-errors

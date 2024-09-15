@@ -18,3 +18,4 @@ indent_size = 4
 
 [*.{yaml,yml,json,jsonc}]
 indent_size = 2
+max_line_length = unset

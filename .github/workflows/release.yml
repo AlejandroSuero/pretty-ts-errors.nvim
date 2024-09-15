@@ -1,0 +1,19 @@
+name: "release"
+on:
+  push:
+    tags:
+      - "v*"
+jobs:
+  luarocks-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: LuaRocks Upload
+        uses: nvim-neorocks/luarocks-tag-release@v7
+        env:
+          LUAROCKS_API_KEY: ${{ secrets.LUAROCKS_API_KEY }}
+        with:
+          summary: "Pretty TS Errors for NeoVim"
+          detailed_description: |
+            Makes your TypeScript errors pretty and readable.
+          template: "./rockspec.template"

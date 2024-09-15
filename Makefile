@@ -18,14 +18,27 @@ default_target: help
 
 test:
 	@$(call style_calls,"Running tests using nvim")
-	@nvim --headless --noplugin -u ./tests/minimal_init.lua -c "PlenaryBustedDirectory tests/your_plugin { minimal_init = './tests/minimal_init.lua'}"
+	@vusted --output=gtest tests/pretty-ts-errors
 	@$(call style_calls,"Done!")
 
 .PHONY: test
 
-lint: style-lint
+test-nvim:
+	@$(call style_calls,"Running tests using nvim and plenary.nvim")
+	@nvim --headless --noplugin -u ./tests/minimal_init.lua -c \
+		"PlenaryBustedDirectory tests/pretty-ts-errors { minimal_init = './tests/minimal_init.lua'}"
+	@$(call style_calls,"Done!")
+
+.PHONY: test-nvim
+
+lint: style-lint spell
 	@$(call style_calls,"Running selene")
 	@selene --display-style quiet --config ./selene.toml lua/**/*.lua
+	@$(call style_calls,"Done!")
+	@$(call style_calls,"Running markdownlint")
+	@markdownlint README.md
+	@$(call style_calls,"Done!")
+	@yamllint -c .yamllint.yml ./**/*.yml
 	@$(call style_calls,"Done!")
 
 .PHONY: lint
@@ -37,7 +50,7 @@ style-lint:
 
 .PHONY: style-lint
 
-format:
+format: spell-write
 	@$(call style_calls,"Running stylua format")
 	@stylua --color always -f ./stylua.toml lua/**/*.lua
 	@$(call style_calls,"Done!")

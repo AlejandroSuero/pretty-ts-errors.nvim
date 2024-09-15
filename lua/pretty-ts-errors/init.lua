@@ -1,4 +1,4 @@
-local config = require("your_plugin.config")
+local config = require("pretty-ts-errors.config")
 
 ---@class Plugin
 ---@field setup fun(opts: PluginOptions|nil)
