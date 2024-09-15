@@ -2,7 +2,12 @@
 
 <div align="center">
 
-<img src="https://github.com/AlejandroSuero/pretty-ts-errors.nvim/blob/main/assets/PrettyTSErrors-logo-512.png" alt="Pretty TS Errors for Neovim logo" width="512" height="512" />
+<img
+  src="https://github.com/AlejandroSuero/pretty-ts-errors.nvim/blob/main/assets/PrettyTSErrors-logo-512.png"
+  alt="Pretty TS Errors for Neovim logo"
+  width="150"
+  height="150"
+/>
 
 [![Stars][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
