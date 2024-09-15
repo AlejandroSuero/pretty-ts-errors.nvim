@@ -26,7 +26,7 @@ Makes your TypeScript errors pretty and readable.
 >
 > This plugin supports Neovim v0.9.0 and above.
 
-## Installation
+## 📦 Installation
 
 You can install this plugin using your preferred package manager:
 
@@ -37,17 +37,23 @@ You can install this plugin using your preferred package manager:
 | Lazy.nvim       | `{ "AlejandroSuero/pretty-ts-errors.nvim" }`   |
 | Rocks.nvim      | `:Rocks install pretty-ts-errors.nvim`         |
 
-## Usage
+<div align="right">(<a href="#readme-top">back to top</a>)</div>
+
+## 🚀 Usage
 
 To use this plugin, you need to enable it in your Neovim configuration file.
 
-## Contributing
+<div align="right">(<a href="#readme-top">back to top</a>)</div>
+
+## 🤝 Contributing
 
 Contributions are what make the open source community such an amazing place to
 be, learn, inspire, and create. Any contributions you make are **greatly
 appreciated**. To do so, please read the [contribution guidelines](CONTRIBUTING.md).
 
-## License
+<div align="right">(<a href="#readme-top">back to top</a>)</div>
+
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE)
 file for details.
