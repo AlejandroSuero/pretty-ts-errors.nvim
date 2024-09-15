@@ -1,0 +1,10 @@
+std="neovim"
+
+[rules]
+global_usage = "warn"
+multiple_statements = "allow"
+incorrect_standard_library_use = "allow" # this is a workaround for string.format, package.config, etc.
+mixed_table = "allow"
+unused_variable = "warn"
+unused_assignment = "warn"
+unscoped_variables = "warn"
