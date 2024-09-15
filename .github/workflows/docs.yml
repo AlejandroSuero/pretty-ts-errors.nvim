@@ -23,7 +23,7 @@ jobs:
       - name: Generating docs with panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: freeze-code.nvim
+          vimdoc: pretty-ts-errors.nvim
           version: "Neovim >= 0.9.0"
           demojify: true
           treesitter: true

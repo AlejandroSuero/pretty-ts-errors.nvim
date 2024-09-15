@@ -3,7 +3,7 @@
 local _MODREV, _SPECREV = "scm", "-1"
 
 rockspec_format = "3.0"
-package = "freeze-code.nvim"
+package = "pretty-ts-errors.nvim"
 version = _MODREV .. _SPECREV
 
 description = {
