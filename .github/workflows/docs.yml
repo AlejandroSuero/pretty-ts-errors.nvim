@@ -19,7 +19,6 @@ jobs:
       - name: Create doc directory if it doesn't exist
         shell: bash
         run: mkdir -p doc
-      - uses: actions/checkout@v4
       - name: Generating docs with panvimdoc
         uses: kdheepak/panvimdoc@main
         with:
